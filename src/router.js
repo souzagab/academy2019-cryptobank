@@ -35,7 +35,7 @@ const router = new Router({
       name: 'register',
       component: () => import(/* webpackChunkName: "register" */ './views/Register.vue'),
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
