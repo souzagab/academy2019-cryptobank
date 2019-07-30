@@ -11,11 +11,11 @@ const router = new Router({
   routes: [
     {
       path: '*',
-      redirect: '/Main'
+      redirect: '/login'
     },
     {
       path: '/',
-      redirect: '/Main'
+      redirect: '/login'
     },
     {
       path: '/Main',
@@ -33,10 +33,7 @@ const router = new Router({
     {
       path: '/Register',
       name: 'register',
-      component: () => import(/* webpackChunkName: "register" */ './views/Register.vue'),
-      meta: {
-        requiresAuth: false
-      }
+      component: () => import(/* webpackChunkName: "register" */ './views/Register.vue')
     },
     {
       path: '/Deposit',

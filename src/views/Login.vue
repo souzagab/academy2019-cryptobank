@@ -1,15 +1,16 @@
 <template>
   <div class="login">
-    <div class="content center">
+    <div class="center">
+    <img class="logo" :src="require('../assets/logo-white.svg')" alt="Logo"/>
 
       <form class="login-form" @submit.prevent="submitLogin">
         <div class="input-control">
-          <label for="email-input">E-mail</label>
+          <label for="email-input">E-mail:</label>
           <input v-model="email" type="email" id="email-input" required name="email" class="input" placeholder="Digite seu e-mail">
         </div>
 
         <div class="input-control">
-          <label for="password-input">Senha</label>
+          <label for="password-input">Senha:</label>
           <input v-model="password" type="password" id="password-input" required name="password" class="input" placeholder="Digite sua senha">
         </div>
 
@@ -19,10 +20,8 @@
           </button>
         </div>
 
-        <br/>
-
         <div class="actions">
-          <p>Novo Usuário <router-link to="/register" > Crie uma conta.</router-link></p>
+          <p>Novo Usuário? <router-link to="/register" > Crie uma conta.</router-link></p>
         </div>
       </form>
     </div>
@@ -54,3 +53,8 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+
+</style>
