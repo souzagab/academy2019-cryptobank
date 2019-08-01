@@ -99,6 +99,7 @@ export default {
   background-color: #333333;
   height: 100%;
   text-align: center;
+
 }
 .content {
   display: inline-block;
