@@ -1,18 +1,28 @@
 <template>
-    <div><h1> MAIN PAGE </h1>
-    <button @click="signOut"> LOG OUT </button>
+ <div class="card">
+        <div class="center">
+            <img class="logo" :src="require('../assets/logo-white.svg')"  alt="logo">
 
-    <h2>$ka : {{accBalance}}</h2>
+        <div class="currency">
+            <p>Saldo Disponível</p>
+            <h3>$KA {{accBalance}}</h3>
+        </div>
 
-    <div>
-        <ul>
-            <li><router-link to="/withdraw">Pagar</router-link></li>
-            <li><router-link to="/transfer">Transferir</router-link></li>
-            <li><router-link to="/deposit">Depositar</router-link></li>
+        <div class="item-list">
+            <div class="item">
+                <img :src="require('../assets/pig.svg')"> <router-link to="/deposit"><p>Depositar</p></router-link>
+            </div>
+            <div class="item">
+                    <img :src="require('../assets/pay.svg')"> <router-link to="/withdraw"><p>Pagar</p></router-link>
+            </div>
+            <div class="item">
+                    <img :src="require('../assets/surface.svg')"> <router-link to="/transfer"><p>Transferir</p></router-link>
+            </div>
+        </div>
 
-        </ul>
     </div>
     </div>
+
 </template>
 
 <script>
@@ -37,14 +47,6 @@ export default {
       }).catch(error => {
         throw new Error(error)
       })
-
-    //   firebase.firestore().collection('users').where('uid', '==', this.userUid).onSnapshot(snapshot => {
-    //       snapshot.docChanges().forEach(change => {
-    //           if(change.type === 'modified') {
-    //               this.accBalance = doc.data().accBalance
-    //           }
-    //       })
-    //   })
   },
 
   methods: {
@@ -56,9 +58,75 @@ export default {
         alert('Erro ao desconectar. \n\n' + error)
       })
     }
-  },
-  computed: {
-
   }
+
 }
 </script>
+
+<style scoped>
+
+.card {
+  text-align: center;
+}
+
+.currency {
+  text-align: left;
+  background-color: white;
+  color: #333333;
+  border-radius: 5px;
+  display: inline-block;
+  width: 330px;
+  height: 104px;
+
+}
+.currency > h3 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 0 12px;
+}
+
+.currency > p {
+  margin: 0;
+  font-size: 15px;
+  color: gray;
+  padding: 14px 0 0 12px;
+}
+
+.logo {
+  padding: 10px 0 20px 0;
+  margin: auto;
+  display: block;
+}
+.center {
+  display: block;
+  margin: 0 auto;
+}
+.item-list {
+  margin: 100px auto auto auto;
+  max-width: 330px;
+}
+
+ .item {
+  justify-content: space-between;
+  font-size: 20px;
+  background-color: #FA7268;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  margin: 10px auto ;
+  padding: 0 10px 0 10px;
+
+}
+.item > a{
+  color: white;
+  text-decoration: none;
+
+}
+.item > a:visited{
+  color: white;
+  text-decoration: none;
+
+}
+
+</style>
