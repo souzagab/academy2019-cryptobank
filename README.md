@@ -1,19 +1,5 @@
 # Sarakin Cryptobank
 
----
-
-[Sarakin](https://academy-sarakin.firebaseapp.com/login)
-
-
-
-
-### Requerimentos
-> [Node](https://nodejs.org/en/)
-> [Yarn](https://yarnpkg.com/en/)
-
-
-=======
-
 Sarakin cryptobank foi um projeto feito com o uso de [vue](https://vuejs.org/) junto com [firebase](https://firebase.google.com/), é uma simulação de um app de banco, onde são feitos depositos, pagamentos, e transfrência entre contas já registradas.
 Confira o link abaixo para ver o projeto já online:
 [Sarakin](https://academy-sarakin.firebaseapp.com/login)
@@ -26,8 +12,6 @@ Confira o link abaixo para ver o projeto já online:
 - [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/en/)
 
-
->>>>>>> 20bc0ab2d199340b858a6265b802342e7419f122
 ----
 ## Como Utilizar:
 ### 1. Clone o repositório 
