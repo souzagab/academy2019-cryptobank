@@ -7,13 +7,13 @@ import firebase from 'firebase'
 let app = ''
 
 const config = {
-  apiKey: 'AIzaSyBFxKuAKQ-D2g0OwoAiq0RXDvnftUj2kCU',
-  authDomain: 'academy-sarakin.firebaseapp.com',
-  databaseURL: 'https://academy-sarakin.firebaseio.com',
-  projectId: 'academy-sarakin',
-  storageBucket: 'academy-sarakin.appspot.com',
-  messagingSenderId: '212022283845',
-  appId: '1:212022283845:web:7385dfa20f93da83'
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.VUE_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID
 }
 
 Vue.config.productionTip = false

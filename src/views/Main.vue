@@ -104,7 +104,7 @@ export default {
 }
 .item-list {
   margin: 100px auto auto auto;
-  max-width: 330px;
+
 }
 
  .item {
@@ -115,6 +115,7 @@ export default {
   color: white;
   display: flex;
   margin: 10px auto ;
+  width: 330px;
   padding: 0 10px 0 10px;
 
 }
