@@ -4,7 +4,7 @@
                     <router-link to="/main"><img class="logo" src="../assets/logo-white.svg"  alt="logo"></router-link>
 
                 <div class="content">
-                  <form @click.prevent="onDeposit">
+                  <form >
                         <div class="header">
                         <router-link to="/main"><img src="../assets/left-arrow.svg"  alt="voltar" ></router-link>
                         <p>Depositar</p>
@@ -17,7 +17,7 @@
                     <div class="foot"><p>Digite um valor entre $KA 10,00 e $KA 15.000,00</p></div>
 
                     <div class="button">
-                        <button type="submit">Depositar</button>
+                        <button type="submit" @click.prevent="onDeposit">Depositar</button>
                     </div>
                     </div>
                   </form>
@@ -56,10 +56,11 @@ export default {
       if (this.value > 10 && this.value <= 15000) {
         firebase.firestore().collection('users').doc(userUid).update({
 
-          accBalance: parseFloat(this.accBalance) + parseFloat(this.value) // vamo melhorar isso aqui né
-
+          accBalance: parseFloat(this.accBalance) + parseFloat(this.value)
         })
-      } // faltou else , mostrar algo se o valor for diferente
+        alert('Transação concluida')
+        this.$router.push({ path: '/main' })
+      } else { alert('Valor fora do padrão especificado') }
     }
 
   },

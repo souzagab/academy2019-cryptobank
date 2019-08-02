@@ -1,16 +1,21 @@
 <template>
-  <div id="app">
+
+    <div id="app">
         <router-view/>
   </div>
+
 </template>
 
 <style >
-body {
+html, body {
     font-family: Roboto, sans-serif;
     background-color: #333333;
-    background-size: cover;
     margin: 0;
     padding: 0;
+    height: 100%;
 
+  }
+  #app {
+    height: 100%;
   }
 </style>

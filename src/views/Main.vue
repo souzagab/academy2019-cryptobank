@@ -1,7 +1,7 @@
 <template>
  <div class="card">
         <div class="center">
-            <img class="logo" :src="require('../assets/logo-white.svg')"  alt="logo">
+            <img class="logo" :src="require('../assets/logo-white.svg')"  alt="logo" @click="signOut">
 
         <div class="currency">
             <p>Saldo Disponível</p>
@@ -52,10 +52,10 @@ export default {
   methods: {
     signOut () {
       firebase.auth().signOut().then(() => {
-        alert('Desconectado com sucesso!')
+        alert('Desconectado')
         this.$router.push('/login')
       }).catch(error => {
-        alert('Erro ao desconectar. \n\n' + error)
+        alert('\n\n' + error)
       })
     }
   }

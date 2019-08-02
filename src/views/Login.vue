@@ -56,14 +56,14 @@ export default {
 
 <style scoped>
 .login {
-  overflow: auto;
-    background: url("../assets/fundo@2x.png") no-repeat center center fixed;
+    overflow: auto;
+    background: url("../assets/fundo@2x.webp") no-repeat center center fixed;
     background-color: #333;
-    background-size: 100%;
+    background-size: cover;
     width: 100%;
     height: 100%;
     color: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     text-align: center;
 
     }

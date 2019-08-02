@@ -8,7 +8,7 @@
                         <router-link to="/main"><img src="../assets/left-arrow.svg"  alt="voltar" ></router-link>
                         <p>Transferir</p>
                         </div>
-                        <form @click.prevent="onTransfer">
+                        <form >
                     <div class="white-form">
                     <div class="text"> <p>Informe a <b>quantia</b> desejada</p> </div>
                     <div class="input-content"> <input v-model="value" type="number" min="0" placeholder="$KA 00,00" required>
@@ -19,13 +19,13 @@
                     <div class="transfer">
                         <p>Pra <b>quem</b> você deseja <b>enviar</b>?</p>
                         <div class="select">
-                        <select name="accounts" form="accounts" :value="selected" v-model="selected">
+                        <select  name="accounts" form="accounts" :value="selected" v-model="selected">
                     <option v-for="user in users"  :key="user.email" :value="user.uid">{{user.email}}> </option>
                 </select>
                         </div>
 
                     <div class="button">
-                        <button type="submit">Transferir</button></div>
+                        <button type="submit" @click.prevent="onTransfer">Transferir</button></div>
                     </div>
                     </div>
                         </form>
@@ -56,8 +56,8 @@ export default {
           this.users.push(doc.data())
         })
       })
-    this.userUid = firebase.auth().currentUser.uid
 
+    this.userUid = firebase.auth().currentUser.uid
     firebase.firestore().collection('users')
       .where('uid', '==', this.userUid)
       .get().then((snapshot) => {
@@ -86,9 +86,12 @@ export default {
           firebase.firestore().collection('users').doc(this.selected).update({
             accBalance: parseFloat(this.selectedAccBalance) + parseFloat(this.value)
           })
-        }
+        } else { alert('Saldo Insuficiente') }
+        alert('Transação concluida')
+        this.$router.push({ path: '/main' })
       }
     }
+
   }
 }
 </script>
@@ -99,14 +102,13 @@ export default {
   background-color: #333333;
   height: 100%;
   text-align: center;
-
 }
 .content {
   display: inline-block;
   background-color: #4076AD;
   color: white;
   border-radius: 10px;
-  width: 380px;
+  max-width: 380px;
 
 }
 .header {
@@ -162,6 +164,17 @@ export default {
     height: 50px;
     cursor: pointer;
 }
+.select {
+ text-align: center;
+
+}
+.select > select {
+     width: 300px;
+     height: 40px;
+     font-size: 15px;
+
+}
+
 .logo {
   padding: 20px 0 120px 0;
   margin: auto;

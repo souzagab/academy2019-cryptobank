@@ -4,7 +4,7 @@
                     <router-link to="/main"><img class="logo" src="../assets/logo-white.svg"  alt="logo"></router-link>
 
                 <div class="content">
-                  <form @click.prevent="onPay">
+                  <form >
                         <div class="header">
                         <router-link to="/main"><img src="../assets/left-arrow.svg"  alt="voltar" ></router-link>
                         <p>Efetuar Pagamento</p>
@@ -17,7 +17,7 @@
                     <div class="foot"><p>Digite um valor entre $KA 10,00 e $KA 15.000,00</p></div>
 
                     <div class="button">
-                        <button type="submit">Pagar</button>
+                        <button type="submit" @click.prevent="onPay">Pagar</button>
                     </div>
                     </div>
                   </form>
@@ -59,8 +59,10 @@ export default {
             accBalance: parseFloat(this.accBalance) - parseFloat(this.value) // <= melhorar isso aqui né
 
           })
+          alert('Transação concluida')
+          this.$router.push({ path: '/main' })
         } else { alert('Saldo Insuficiente') }
-      }
+      } else { alert('Valor fora do padrão especificado') }
     }
   }
 
