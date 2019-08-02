@@ -1,5 +1,5 @@
 # Sarakin Cryptobank
-<<<<<<< HEAD
+
 ---
 
 [Sarakin](https://academy-sarakin.firebaseapp.com/login)
