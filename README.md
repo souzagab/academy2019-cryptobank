@@ -1,29 +1,37 @@
-# academy2019-cryptobank
+# Sarakin Cryptobank
+---
 
-## Project setup
+[Sarakin](https://academy-sarakin.firebaseapp.com/login)
+
+
+
+
+### Requerimentos
+> [Node](https://nodejs.org/en/)
+> [Yarn](https://yarnpkg.com/en/)
+
+
+----
+## Como Utilizar:
+### 1. Clone o repositório 
+```
+$ git clone https://github.com/desouzagab/academy2019-cryptobank.git
+```
+### 2. Entre na pasta criada 
+```
+$ cd academy2019-cryptobank
+```
+### 3. Instale as dependencias
 ```
 yarn install
 ```
-
-### Compiles and hot-reloads for development
+### 4. Rode o server
 ```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
+yarn serve
 ```
 
-### Run your tests
-```
-yarn run test
-```
 
-### Lints and fixes files
-```
-yarn run lint
-```
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
