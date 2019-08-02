@@ -7,8 +7,8 @@
 
 
 ### Requerimentos
-> [Node](https://nodejs.org/en/)
-> [Yarn](https://yarnpkg.com/en/)
+- [Node](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/en/)
 
 
 ----
